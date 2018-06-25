@@ -23,7 +23,7 @@ def features(wav):
     duration = 10
     y, sr = librosa.load(wav, duration = duration)
     
-    #Calculate the spectrogram S of the waveform for future calculations
+    # Calculate the spectrogram S of the waveform for future calculations
     S, phase = librosa.magphase(librosa.stft(y))
     
     # Separate harmonic and percussive into two waveforms
@@ -52,7 +52,7 @@ def features(wav):
     rolloff_mean = np.mean(rolloff)
     rolloff_std = np.mean(rolloff)
     
-    #Create empy dictionary to story information
+    # Create empy dictionary to story information
     features = {'Tempo': tempo,
                 'RMSE Mean' : rmse_mean,
                 'RMSE Std' : rmse_std,
